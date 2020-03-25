@@ -27,7 +27,7 @@
                 app:riv_corner_radius="4dp"
                 />
 
-            <com.qianhong.sflive.custom.MyImageView2
+            <com.video.liveshow.custom.MyImageView2
                 android:id="@+id/btn_play"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -37,7 +37,7 @@
         </RelativeLayout>
 
 
-        <com.qianhong.sflive.custom.MyImageView
+        <com.video.liveshow.custom.MyImageView
             android:id="@+id/btn_collect"
             android:layout_width="30dp"
             android:layout_height="30dp"

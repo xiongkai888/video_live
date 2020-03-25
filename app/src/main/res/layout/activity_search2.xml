@@ -142,7 +142,7 @@
         android:visibility="invisible"
         >
 
-        <com.qianhong.sflive.custom.ViewPagerIndicator
+        <com.video.liveshow.custom.ViewPagerIndicator
             android:id="@+id/indicator"
             android:layout_width="260dp"
             android:layout_height="40dp"

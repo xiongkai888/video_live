@@ -7,7 +7,7 @@
 
     <include layout="@layout/view_title" />
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -25,7 +25,7 @@
         app:right_drawable="@mipmap/icon_right_arrow" />
 
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/feedback"
         android:layout_width="match_parent"
         android:layout_height="48dp"

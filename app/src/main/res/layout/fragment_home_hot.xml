@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/main_bottom_height"
     >
 
-    <com.qianhong.sflive.custom.RefreshView
+    <com.video.liveshow.custom.RefreshView
         android:id="@+id/refreshView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

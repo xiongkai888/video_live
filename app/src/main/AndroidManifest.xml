@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.qianhong.sflive">
+    package="com.video.liveshow">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -34,7 +34,7 @@
 
 
     <application
-        android:name="com.qianhong.sflive.AppContext"
+        android:name="com.video.liveshow.AppContext"
         android:allowBackup="true"
         android:icon="@mipmap/app_logo"
         android:label="@string/app_name"
@@ -42,7 +42,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name="com.qianhong.sflive.activity.LauncherActivity"
+            android:name="com.video.liveshow.activity.LauncherActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashStyle">
             <intent-filter>
@@ -51,195 +51,195 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.qianhong.sflive.activity.MainActivity"
+            android:name="com.video.liveshow.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFRegisterActivity"
+            android:name="com.video.liveshow.activity.ZSFRegisterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.VideoPlayActivity"
+            android:name="com.video.liveshow.activity.VideoPlayActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.LoginActivity"
+            android:name="com.video.liveshow.activity.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMyAuth"
+            android:name="com.video.liveshow.activity.ZSFMyAuth"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMessageActivity"
+            android:name="com.video.liveshow.activity.ZSFMessageActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.SearchActivity2"
+            android:name="com.video.liveshow.activity.SearchActivity2"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFSetSecondPwdActivity"
+            android:name="com.video.liveshow.activity.ZSFSetSecondPwdActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFSaveCandy"
+            android:name="com.video.liveshow.activity.ZSFSaveCandy"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFHelpCenter"
+            android:name="com.video.liveshow.activity.ZSFHelpCenter"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMyLevel"
+            android:name="com.video.liveshow.activity.ZSFMyLevel"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMyContribute"
+            android:name="com.video.liveshow.activity.ZSFMyContribute"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMyStar"
+            android:name="com.video.liveshow.activity.ZSFMyStar"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMyCandyRecord"
+            android:name="com.video.liveshow.activity.ZSFMyCandyRecord"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFSetPayInfo2"
+            android:name="com.video.liveshow.activity.ZSFSetPayInfo2"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFShareActivity"
+            android:name="com.video.liveshow.activity.ZSFShareActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMyMoney"
+            android:name="com.video.liveshow.activity.ZSFMyMoney"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMissionActivity"
+            android:name="com.video.liveshow.activity.ZSFMissionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFMyFriends"
+            android:name="com.video.liveshow.activity.ZSFMyFriends"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFTradeCenter"
+            android:name="com.video.liveshow.activity.ZSFTradeCenter"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFRankActivity"
+            android:name="com.video.liveshow.activity.ZSFRankActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFTradeRecordActivity"
+            android:name="com.video.liveshow.activity.ZSFTradeRecordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFSearchActivity"
+            android:name="com.video.liveshow.activity.ZSFSearchActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFSendActivity"
+            android:name="com.video.liveshow.activity.ZSFSendActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZSFRecordDetailActivity"
+            android:name="com.video.liveshow.activity.ZSFRecordDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ReplyActivity"
+            android:name="com.video.liveshow.activity.ReplyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.WebActivity"
+            android:name="com.video.liveshow.activity.WebActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.WebUploadImgActivity"
+            android:name="com.video.liveshow.activity.WebUploadImgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ReportActivity"
+            android:name="com.video.liveshow.activity.ReportActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
         <activity
-            android:name="com.qianhong.sflive.activity.SettingActivity"
+            android:name="com.video.liveshow.activity.SettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.EditProfileActivity"
+            android:name="com.video.liveshow.activity.EditProfileActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.FollowActivity"
+            android:name="com.video.liveshow.activity.FollowActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.FansActivity"
+            android:name="com.video.liveshow.activity.FansActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.VideoRecordActivity"
+            android:name="com.video.liveshow.activity.VideoRecordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.VideoChooseActivity"
+            android:name="com.video.liveshow.activity.VideoChooseActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.MusicActivity"
+            android:name="com.video.liveshow.activity.MusicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.VideoMusicActivity"
+            android:name="com.video.liveshow.activity.VideoMusicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.VideoCompressActivity"
+            android:name="com.video.liveshow.activity.VideoCompressActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.VideoEditActivity"
+            android:name="com.video.liveshow.activity.VideoEditActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.VideoPublishActivity"
+            android:name="com.video.liveshow.activity.VideoPublishActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.OtherUserActivity"
+            android:name="com.video.liveshow.activity.OtherUserActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ChatActivity"
+            android:name="com.video.liveshow.activity.ChatActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ImageChooseActivity"
+            android:name="com.video.liveshow.activity.ImageChooseActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.LocationActivity"
+            android:name="com.video.liveshow.activity.LocationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.FansMsgActivity"
+            android:name="com.video.liveshow.activity.FansMsgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZanMsgActivity"
+            android:name="com.video.liveshow.activity.ZanMsgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.CommentMsgActivity"
+            android:name="com.video.liveshow.activity.CommentMsgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.AtMsgActivity"
+            android:name="com.video.liveshow.activity.AtMsgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ContactsActivity"
+            android:name="com.video.liveshow.activity.ContactsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.AtFriendsActivity"
+            android:name="com.video.liveshow.activity.AtFriendsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.AdminMsgActivity"
+            android:name="com.video.liveshow.activity.AdminMsgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.SystemMsgActivity"
+            android:name="com.video.liveshow.activity.SystemMsgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.BlackActivity"
+            android:name="com.video.liveshow.activity.BlackActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.WalletActivity"
+            android:name="com.video.liveshow.activity.WalletActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.CashActivity"
+            android:name="com.video.liveshow.activity.CashActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
         <activity
-            android:name="com.qianhong.sflive.activity.CashActivity2"
+            android:name="com.video.liveshow.activity.CashActivity2"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
         <activity
-            android:name="com.qianhong.sflive.activity.ZanMoneyActivity"
+            android:name="com.video.liveshow.activity.ZanMoneyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ShareActivity"
+            android:name="com.video.liveshow.activity.ShareActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.ChooseMusicActivity"
+            android:name="com.video.liveshow.activity.ChooseMusicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.EditMusicActivity"
+            android:name="com.video.liveshow.activity.EditMusicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qianhong.sflive.activity.LinkActivity"
+            android:name="com.video.liveshow.activity.LinkActivity"
             android:screenOrientation="portrait" />
         <!--微信登录回调页面-->
         <activity
-            android:name="com.qianhong.sflive.wxapi.WXEntryActivity"
+            android:name="com.video.liveshow.wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
@@ -271,7 +271,7 @@
         <!--Android 7.0 拍照要用这个-->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.qianhong.sflive.fileprovider"
+            android:authorities="com.video.liveshow.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

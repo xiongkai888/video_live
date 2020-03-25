@@ -174,7 +174,7 @@
             android:layout_marginTop="13dp"
             >
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_link"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -187,7 +187,7 @@
                 app:textSize1="14sp"
                 />
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_start_record"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -212,7 +212,7 @@
         android:layout_marginTop="10dp"
         >
 
-        <com.qianhong.sflive.custom.RefreshView
+        <com.video.liveshow.custom.RefreshView
             android:id="@+id/hotRefreshView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -220,7 +220,7 @@
             app:enableRefresh="false"
             />
 
-        <com.qianhong.sflive.custom.RefreshView
+        <com.video.liveshow.custom.RefreshView
             android:id="@+id/collectRefreshView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -253,7 +253,7 @@
                 android:textSize="14sp"
                 />
 
-            <com.qianhong.sflive.custom.RefreshView
+            <com.video.liveshow.custom.RefreshView
                 android:id="@+id/myMusicRefreshView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -265,7 +265,7 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <com.qianhong.sflive.custom.RefreshView
+    <com.video.liveshow.custom.RefreshView
         android:id="@+id/searchRefreshView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -315,7 +315,7 @@
 
         </RelativeLayout>
 
-        <com.qianhong.sflive.custom.RefreshView
+        <com.video.liveshow.custom.RefreshView
             android:id="@+id/classRefreshView"
             android:layout_width="match_parent"
             android:layout_height="0dp"

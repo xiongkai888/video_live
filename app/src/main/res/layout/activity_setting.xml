@@ -7,7 +7,7 @@
 
     <include layout="@layout/view_title" />
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/btn_black_list"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -26,7 +26,7 @@
 
     <View style="@style/line" />
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/btn_pwd"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -45,7 +45,7 @@
 
     <View style="@style/line" />
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/btn_second_pwd"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -64,7 +64,7 @@
 
     <View style="@style/line" />
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/btn_pay"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -84,7 +84,7 @@
 
     <View style="@style/line" />
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/btn_auth"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -103,7 +103,7 @@
 
     <View style="@style/line" />
 
-    <com.qianhong.sflive.custom.DrawableRadioButton
+    <com.video.liveshow.custom.DrawableRadioButton
         android:id="@+id/btn_about"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -129,7 +129,7 @@
         android:clickable="true"
         android:onClick="settingClick">
 
-        <com.qianhong.sflive.custom.DrawableRadioButton
+        <com.video.liveshow.custom.DrawableRadioButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black1"
@@ -163,7 +163,7 @@
         android:layout_height="48dp"
         android:onClick="settingClick">
 
-        <com.qianhong.sflive.custom.DrawableRadioButton
+        <com.video.liveshow.custom.DrawableRadioButton
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@color/black1"

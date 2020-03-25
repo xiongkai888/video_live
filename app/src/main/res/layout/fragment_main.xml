@@ -17,7 +17,7 @@
         android:background="@mipmap/bg_home_bottom"
         android:orientation="horizontal">
 
-        <com.qianhong.sflive.custom.DrawableRadioButton
+        <com.video.liveshow.custom.DrawableRadioButton
             android:id="@+id/btn_home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -33,7 +33,7 @@
             app:top_drawable="@drawable/bg_main_home"
             app:top_drawableSize="30dp" />
 
-        <com.qianhong.sflive.custom.DrawableRadioButton
+        <com.video.liveshow.custom.DrawableRadioButton
             android:id="@+id/btn_follow"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -49,7 +49,7 @@
             app:top_drawable="@drawable/bg_main_follow"
             app:top_drawableSize="30dp" />
 
-        <com.qianhong.sflive.custom.DrawableRadioButton
+        <com.video.liveshow.custom.DrawableRadioButton
             android:id="@+id/btn_msg"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -64,7 +64,7 @@
             app:top_drawable="@drawable/bg_main_trade"
             app:top_drawableSize="30dp" />
 
-        <com.qianhong.sflive.custom.DrawableRadioButton
+        <com.video.liveshow.custom.DrawableRadioButton
             android:id="@+id/btn_me"
             android:layout_width="0dp"
             android:layout_height="match_parent"

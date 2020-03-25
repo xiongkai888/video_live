@@ -156,7 +156,7 @@
                     android:orientation="horizontal"
                     >
 
-                    <com.qianhong.sflive.custom.DrawableRadioButton2
+                    <com.video.liveshow.custom.DrawableRadioButton2
                         android:id="@+id/btn_wx"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
@@ -170,7 +170,7 @@
                         app:left_drawableSize="16dp"
                         />
 
-                    <com.qianhong.sflive.custom.DrawableRadioButton2
+                    <com.video.liveshow.custom.DrawableRadioButton2
                         android:id="@+id/btn_zfb"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"

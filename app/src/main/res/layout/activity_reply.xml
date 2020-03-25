@@ -23,7 +23,7 @@
         android:orientation="horizontal"
         >
 
-        <com.qianhong.sflive.custom.AtEditText
+        <com.video.liveshow.custom.AtEditText
             android:id="@+id/comment_edit"
             android:layout_width="0dp"
             android:layout_height="30dp"
@@ -64,7 +64,7 @@
     </LinearLayout>
 
 
-    <com.qianhong.sflive.custom.RefreshLayout
+    <com.video.liveshow.custom.RefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -80,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-    </com.qianhong.sflive.custom.RefreshLayout>
+    </com.video.liveshow.custom.RefreshLayout>
 
     <ProgressBar
         android:id="@+id/loading_reply"

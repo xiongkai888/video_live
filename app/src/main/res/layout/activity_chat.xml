@@ -124,7 +124,7 @@
         android:visibility="invisible"
         >
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_more_img"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             app:textSize1="14sp"
             />
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_more_camera"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
             app:textSize1="14sp"
             />
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_more_voice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -169,7 +169,7 @@
             app:textSize1="14sp"
             />
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_more_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -285,7 +285,7 @@
             android:orientation="horizontal"
             >
 
-            <com.qianhong.sflive.custom.MyImageView2
+            <com.video.liveshow.custom.MyImageView2
                 android:id="@+id/btn_voice"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -334,7 +334,7 @@
 
             </FrameLayout>
 
-            <com.qianhong.sflive.custom.MyImageView2
+            <com.video.liveshow.custom.MyImageView2
                 android:id="@+id/btn_face"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -411,7 +411,7 @@
                 android:visibility="invisible"
                 />
 
-            <com.qianhong.sflive.custom.AnimImageView
+            <com.video.liveshow.custom.AnimImageView
                 android:id="@+id/btn_voice_input"
                 android:layout_width="90dp"
                 android:layout_height="90dp"

@@ -133,7 +133,7 @@
         android:visibility="visible"
         >
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_meibai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
             app:text2="@string/beauty_meibai"
             />
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_mopi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
             app:text2="@string/beauty_mopi"
             />
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_baohe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
             app:text2="@string/beauty_baohe"
             />
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_fengnen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -183,7 +183,7 @@
         android:visibility="invisible"
         >
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_big_eye"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
             app:text2="@string/beauty_big_eye"
             />
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_face"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -256,7 +256,7 @@
         android:visibility="invisible"
         >
 
-        <com.qianhong.sflive.custom.DrawableRadioButton2
+        <com.video.liveshow.custom.DrawableRadioButton2
             android:id="@+id/btn_haha_0"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -270,7 +270,7 @@
             app:top_drawableSize="40dp"
             />
 
-        <com.qianhong.sflive.custom.DrawableRadioButton2
+        <com.video.liveshow.custom.DrawableRadioButton2
             android:id="@+id/btn_haha_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -289,7 +289,7 @@
 
             />
 
-        <com.qianhong.sflive.custom.DrawableRadioButton2
+        <com.video.liveshow.custom.DrawableRadioButton2
             android:id="@+id/btn_haha_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -307,7 +307,7 @@
             app:top_drawableSize="40dp"
             />
 
-        <com.qianhong.sflive.custom.DrawableRadioButton2
+        <com.video.liveshow.custom.DrawableRadioButton2
             android:id="@+id/btn_haha_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -325,7 +325,7 @@
             app:top_drawableSize="40dp"
             />
 
-        <com.qianhong.sflive.custom.DrawableRadioButton2
+        <com.video.liveshow.custom.DrawableRadioButton2
             android:id="@+id/btn_haha_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"

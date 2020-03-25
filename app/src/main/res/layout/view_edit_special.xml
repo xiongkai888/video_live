@@ -419,7 +419,7 @@
 
                 </LinearLayout>
 
-                <com.qianhong.sflive.custom.DrawableRadioButton
+                <com.video.liveshow.custom.DrawableRadioButton
                     android:id="@+id/btn_cancel_other_special"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

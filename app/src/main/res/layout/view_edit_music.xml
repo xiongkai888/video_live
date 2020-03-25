@@ -89,7 +89,7 @@
                 android:src="@mipmap/bgm_wave_voice"
                 />
 
-            <com.qianhong.sflive.custom.RangeSlider
+            <com.video.liveshow.custom.RangeSlider
                 android:id="@+id/bgm_range_slider"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -111,7 +111,7 @@
         android:clickable="true"
         >
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_original"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
             app:text2="@string/music_original"
             />
 
-        <com.qianhong.sflive.custom.TextSeekBar
+        <com.video.liveshow.custom.TextSeekBar
             android:id="@+id/seek_bgm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

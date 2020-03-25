@@ -31,7 +31,7 @@
             android:orientation="horizontal"
             >
 
-            <com.qianhong.sflive.custom.record.NumberProgressBar
+            <com.video.liveshow.custom.record.NumberProgressBar
                 android:id="@+id/progressbar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

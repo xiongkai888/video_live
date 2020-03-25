@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     >
 
-    <com.qianhong.sflive.custom.VerticalViewPager
+    <com.video.liveshow.custom.VerticalViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,7 +29,7 @@
             />
     </RelativeLayout>
 
-    <com.qianhong.sflive.custom.LoadingBar
+    <com.video.liveshow.custom.LoadingBar
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="1dp"

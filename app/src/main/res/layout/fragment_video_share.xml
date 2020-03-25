@@ -57,7 +57,7 @@
         android:orientation="horizontal"
         >
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_report"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -70,7 +70,7 @@
             app:textSize1="14sp"
             />
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_copy"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -83,7 +83,7 @@
             app:textSize1="14sp"
             />
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -97,7 +97,7 @@
             />
 
 
-        <com.qianhong.sflive.custom.ImageTextView
+        <com.video.liveshow.custom.ImageTextView
             android:id="@+id/btn_black"
             android:layout_width="0dp"
             android:layout_height="match_parent"

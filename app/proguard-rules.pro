@@ -72,6 +72,6 @@
     <init>(java.lang.Throwable);
 }
 
--keep public class com.qianhong.sflive.bean.** {*;}
+-keep public class com.video.liveshow.bean.** {*;}
 
 

@@ -33,7 +33,7 @@
         android:focusable="false"
         />
 
-    <com.qianhong.sflive.custom.BubbleLayout
+    <com.video.liveshow.custom.BubbleLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/avatar"
@@ -84,7 +84,7 @@
                 android:textSize="12sp"
                 />
 
-            <com.qianhong.sflive.custom.MyRelativeLayout
+            <com.video.liveshow.custom.MyRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 >
@@ -104,10 +104,10 @@
                     android:src="@mipmap/icon_location_marker"
                     android:translationY="-5dp"
                     />
-            </com.qianhong.sflive.custom.MyRelativeLayout>
+            </com.video.liveshow.custom.MyRelativeLayout>
 
         </LinearLayout>
 
-    </com.qianhong.sflive.custom.BubbleLayout>
+    </com.video.liveshow.custom.BubbleLayout>
 
 </RelativeLayout>

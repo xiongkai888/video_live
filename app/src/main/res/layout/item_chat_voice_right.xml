@@ -34,7 +34,7 @@
         app:riv_oval="true"
         />
 
-    <com.qianhong.sflive.custom.BubbleLayout
+    <com.video.liveshow.custom.BubbleLayout
         android:id="@+id/bubbleLayout"
         android:layout_width="120dp"
         android:layout_height="40dp"
@@ -50,7 +50,7 @@
         app:bubbleBgColor="#ccea377f"
         app:bubbleRadius="5dp">
 
-        <com.qianhong.sflive.custom.AnimImageView
+        <com.video.liveshow.custom.AnimImageView
             android:id="@+id/voice_anim_view"
             android:layout_width="26dp"
             android:layout_height="26dp"
@@ -60,7 +60,7 @@
             app:srcId="@mipmap/icon_voice_right_3"
             />
 
-    </com.qianhong.sflive.custom.BubbleLayout>
+    </com.video.liveshow.custom.BubbleLayout>
 
     <View
         android:id="@+id/red_point"

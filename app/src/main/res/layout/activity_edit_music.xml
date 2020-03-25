@@ -66,7 +66,7 @@
             android:src="@mipmap/bgm_wave_voice"
             />
 
-        <com.qianhong.sflive.custom.RangeSlider
+        <com.video.liveshow.custom.RangeSlider
             android:id="@+id/bgm_range_slider"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

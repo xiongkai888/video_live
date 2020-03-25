@@ -32,7 +32,7 @@
                 android:src="@mipmap/icon_back"
                 />
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_music"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                 app:textSize1="12sp"
                 />
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_music_volume"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:layout_marginBottom="10dp"
             >
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_special"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                 app:textSize1="12sp"
                 />
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_cover"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                 android:visibility="gone"
                 />
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_filter"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"

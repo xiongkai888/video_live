@@ -70,7 +70,7 @@
             android:layout_marginBottom="10dp"
             >
 
-            <com.qianhong.sflive.custom.AnimImageView
+            <com.video.liveshow.custom.AnimImageView
                 android:id="@+id/btn_record"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -83,7 +83,7 @@
                 app:interval="40"
                 />
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_upload"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                 app:textSize1="12sp"
                 />
 
-            <com.qianhong.sflive.custom.ImageTextView
+            <com.video.liveshow.custom.ImageTextView
                 android:id="@+id/btn_beauty"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
 
         </RelativeLayout>
 
-        <com.qianhong.sflive.custom.record.RecordProgressView
+        <com.video.liveshow.custom.record.RecordProgressView
             android:id="@+id/record_progress_view"
             android:layout_width="match_parent"
             android:layout_height="3dp"

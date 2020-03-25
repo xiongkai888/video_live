@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     >
 
-    <com.qianhong.sflive.custom.SquareImageView
+    <com.video.liveshow.custom.SquareImageView
         android:id="@+id/cover"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -36,7 +36,7 @@
         android:adjustViewBounds="true"
         android:src="@mipmap/bg_video_shadow_bottom" />
 
-    <com.qianhong.sflive.custom.MusicAnimLayout
+    <com.video.liveshow.custom.MusicAnimLayout
         android:id="@+id/music_anim"
         android:layout_width="90dp"
         android:layout_height="70dp"
@@ -76,7 +76,7 @@
 
         </RelativeLayout>
 
-        <com.qianhong.sflive.custom.FrameAnimImageView
+        <com.video.liveshow.custom.FrameAnimImageView
             android:id="@+id/btn_zan"
             android:layout_width="44dp"
             android:layout_height="44dp"
@@ -140,7 +140,7 @@
             android:layout_height="20dp"
             android:src="@mipmap/icon_record_music" />
 
-        <com.qianhong.sflive.custom.MarqueeTextView
+        <com.video.liveshow.custom.MarqueeTextView
             android:id="@+id/music_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

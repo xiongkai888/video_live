@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     >1
 
-    <com.qianhong.sflive.custom.MyImageView
+    <com.video.liveshow.custom.MyImageView
         android:id="@+id/thumb"
         android:layout_width="match_parent"
         android:layout_height="0dp"
