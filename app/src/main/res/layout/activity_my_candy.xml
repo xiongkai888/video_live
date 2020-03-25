@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/candy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.000"
+            android:textColor="@color/sf_money_color"
+            android:textSize="26sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总硕果数量"
+            android:textColor="@color/sf_gray"
+            android:textSize="@dimen/txt_12sp" />
+    </LinearLayout>
+
+    <com.qianhong.sflive.custom.RefreshView
+        android:id="@+id/refreshView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:enableLoadMore="true"
+        app:enableRefresh="true" />
+
+
+</LinearLayout>

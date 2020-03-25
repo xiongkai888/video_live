@@ -1,0 +1,48 @@
+<resources>
+    <dimen name="main_bottom_height">46dp</dimen>
+    <dimen name="main_title_size">18dp</dimen>
+
+
+    <dimen name="sf_bigger">30sp</dimen>
+    <dimen name="sf_large">20sp</dimen>
+    <dimen name="sf_big">18sp</dimen>
+    <dimen name="sf_normal">14sp</dimen>
+    <dimen name="sf_item">12sp</dimen>
+    <dimen name="sf_small">10sp</dimen>
+    <dimen name="sf_smaller">8sp</dimen>
+
+    <!--字体大小-->
+    <dimen name="txt_8sp">8sp</dimen>
+    <dimen name="txt_10sp">10sp</dimen>
+    <dimen name="txt_11sp">11sp</dimen>
+    <dimen name="txt_12sp">12sp</dimen>
+    <dimen name="txt_14sp">14sp</dimen>
+    <dimen name="txt_16sp">16sp</dimen>
+    <dimen name="txt_18sp">18sp</dimen>
+    <dimen name="txt_20sp">20sp</dimen>
+
+    <!---->
+    <dimen name="d_0dp">0dp</dimen>
+    <dimen name="d_1dp">1dp</dimen>
+    <dimen name="d_2dp">2dp</dimen>
+    <dimen name="d_3dp">3dp</dimen>
+    <dimen name="d_5dp">5dp</dimen>
+    <dimen name="d_6dp">6dp</dimen>
+    <dimen name="d_8dp">8dp</dimen>
+    <dimen name="d_10dp">10dp</dimen>
+    <dimen name="d_12dp">12dp</dimen>
+    <dimen name="d_15dp">15dp</dimen>
+    <dimen name="d_20dp">20dp</dimen>
+    <dimen name="d_25dp">25dp</dimen>
+    <dimen name="d_30dp">30dp</dimen>
+    <dimen name="d_40dp">40dp</dimen>
+    <dimen name="d_45dp">45dp</dimen>
+    <dimen name="d_50dp">50dp</dimen>
+    <dimen name="d_55dp">55dp</dimen>
+    <dimen name="d_60dp">60dp</dimen>
+    <dimen name="d_70dp">70dp</dimen>
+    <dimen name="d_80dp">80dp</dimen>
+    <dimen name="d_90dp">90dp</dimen>
+    <dimen name="d_100dp">100dp</dimen>
+
+</resources>

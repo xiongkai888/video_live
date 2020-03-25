@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="达人介绍"
+            android:textColor="#BDBDBD"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/contribute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="贡献值"
+            android:textColor="#BDBDBD"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="小区活跃度"
+            android:textColor="#BDBDBD"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/big"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="大区活跃度"
+            android:textColor="#BDBDBD"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="直推人数"
+            android:textColor="#BDBDBD"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="手续费分红比例"
+            android:textColor="#BDBDBD"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+
+    <View style="@style/line2"></View>
+
+</LinearLayout>

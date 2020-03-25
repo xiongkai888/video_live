@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sf_item_bg"
+    android:gravity="right"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:paddingTop="20dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_avatargroup"
+            android:layout_width="59dp"
+            android:layout_height="31dp">
+
+            <ImageView
+                android:id="@+id/positionbg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/sf_rank_avatar_bg" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/avatar"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_avatar_rank_bg"
+                android:padding="1dp"
+                app:riv_oval="true" />
+
+            <TextView
+                android:id="@+id/position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:text="01"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/rl_avatargroup"
+            android:text="name"
+            android:textColor="@color/white"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="-5dp"
+            android:layout_toRightOf="@id/rl_avatargroup"
+            android:text="name"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="250"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/rank_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rank"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="活跃度"
+                android:textColor="@color/color605F67"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <View style="@style/line4"></View>
+</LinearLayout>
+

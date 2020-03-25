@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title"></include>
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_login_group"
+        android:hint="请输入二级交易密码"
+        android:inputType="textPassword"
+        android:maxLength="6"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="#636466"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:id="@+id/group_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_login_group"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+86"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="2dp"
+            android:src="@mipmap/icon_down" />
+
+        <TextView
+            android:id="@+id/edit_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:maxLength="11"
+            android:textColor="#fff"
+            android:textColorHint="#636466"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/group_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/group_1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_login_group"
+            android:hint="@string/input_phone_code"
+            android:inputType="number"
+            android:maxLength="8"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#636466"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/btn_get_code"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/bg_login_group"
+            android:gravity="center"
+            android:onClick="loginClick"
+            android:text="@string/get_valid_code"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_save"
+        android:layout_width="88dp"
+        android:layout_height="31dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@mipmap/sf_bg_save"
+        android:gravity="center"
+        android:onClick="loginClick"
+        android:paddingLeft="21dp"
+        android:paddingRight="15dp"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sf_item" />
+
+</LinearLayout>
