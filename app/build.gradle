@@ -1,0 +1,129 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    signingConfigs {
+
+        debug {
+            keyAlias 'live'
+            keyPassword '1008611'
+            storeFile file('../live.jks')
+            storePassword '1008611'
+        }
+        release {
+            keyAlias 'live'
+            keyPassword '1008611'
+            storeFile file('../live.jks')
+            storePassword '1008611'
+        }
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    defaultConfig {
+        applicationId "com.video.liveshow"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.startsWith('app-release')) {
+                def fileName = outputFile.name.replace("app-release", "ssp_vc${defaultConfig.versionCode}_vn${defaultConfig.versionName}_${buildTime()}")
+                outputFileName = fileName
+            }
+        }
+    }
+}
+
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+repositories {
+    flatDir {
+        dirs 'libs', '../libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    //极光推送
+    implementation project(':jpush')
+    //使用sharedsdk进行第三方登录，分享
+    implementation project(':sharedsdk')
+    //使用Glide加载图片
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    //使用okgo进行http网络请求
+    implementation 'com.lzy.net:okgo:3.0.4'
+    //fastJson解析json
+    implementation 'com.alibaba:fastjson:1.1.60.android'
+    //eventbus事件总线
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    //首页轮播图
+    implementation 'com.youth.banner:banner:1.4.9'
+    //带圆角，边框的的ImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //腾讯bugly
+    implementation 'com.tencent.bugly:crashreport:2.2.2'
+    //gif动画库
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'
+    //腾讯短视频sdk
+    compile(name: 'LiteAVSDK_UGC_4.4.3774', ext: 'aar')
+    implementation project(':video')
+    //微信支付,登录
+    compile files('libs/libammsdk.jar')
+    //七牛云
+    implementation 'com.qiniu:qiniu-android-sdk:7.2.1'
+    //一个Picker控件，选择日期，城市用
+    compile files('libs/AndroidPicker-1.5.6.jar')
+    compile files('libs/commons-io-1.4.jar')
+    //萌颜
+    implementation project(':beauty')
+    //gif动画库
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'
+    //leakcanary检测内存泄露
+    //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //腾讯定位，地图sdk
+    compile files('libs/TencentLocationSdk_v6.2.5.3.jar')
+    compile files('libs/TencentMapSDK_1.2.8.1.jar')
+    //百度语音识别
+    compile files('libs/bdasr_3.0.7.3.jar')
+    implementation 'ywl.ywl5320:libmusic:1.2.6'
+    implementation group: 'org', name: 'jaudiotagger', version: '2.0.3'
+    //人脸识别
+//    implementation project(':facesdk')
+}
