@@ -2,7 +2,6 @@ package com.yunbao.video.custom;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +13,8 @@ import com.yunbao.video.R;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class ThumbnailAdapter extends RecyclerView.Adapter {

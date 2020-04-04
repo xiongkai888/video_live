@@ -1,7 +1,6 @@
 package com.yunbao.video.custom;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by vinsonswang on 2017/11/6.
