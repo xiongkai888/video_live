@@ -1,9 +1,10 @@
 package com.video.liveshow.activity;
 
-import android.support.v4.app.FragmentTransaction;
 
 import com.video.liveshow.R;
 import com.video.liveshow.fragment.MessageFragment;
+
+import androidx.fragment.app.FragmentTransaction;
 
 public class ZSFMessageActivity extends AbsActivity {
 

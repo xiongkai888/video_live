@@ -7,11 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -44,6 +39,12 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by cxf on 2018/6/11.
@@ -197,14 +198,19 @@ public class MainActivity extends AudioAbsActivity implements ViewPager.OnPageCh
     public void mainClick(View v) {
         switch (v.getId()) {
             case R.id.btn_record:
-                if (AppConfig.getInstance().getConfig().getMaintain_switch().equals("0")) {
-                    ToastUtil.show("视频录制暂未开放");
+//                if (AppConfig.getInstance().getConfig().getMaintain_switch().equals("0")) {
+//                    ToastUtil.show("视频录制暂未开放");
+//                } else {
+//                    if (AppConfig.getInstance().isLogin()) {
+//                        checkVideoPermission();
+//                    } else {
+//                        LoginActivity.forwardLogin(mContext);
+//                    }
+//                }
+                if (AppConfig.getInstance().isLogin()) {
+                    checkVideoPermission();
                 } else {
-                    if (AppConfig.getInstance().isLogin()) {
-                        checkVideoPermission();
-                    } else {
-                        LoginActivity.forwardLogin(mContext);
-                    }
+                    LoginActivity.forwardLogin(mContext);
                 }
                 break;
             case R.id.btn_search:

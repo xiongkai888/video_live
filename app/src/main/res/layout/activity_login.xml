@@ -190,7 +190,7 @@
             android:textColor="#fff"
             android:textSize="14sp" />
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="wrap_content"
             android:layout_height="50dp"

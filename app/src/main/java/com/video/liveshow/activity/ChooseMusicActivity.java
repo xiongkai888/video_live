@@ -1,8 +1,6 @@
 package com.video.liveshow.activity;
 
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.video.liveshow.Constants;
@@ -15,6 +13,9 @@ import com.video.liveshow.utils.MusicScanUtil;
 import com.video.liveshow.utils.WordUtil;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by cxf on 2018/8/6.

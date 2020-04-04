@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.LinearLayoutManager;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -33,6 +32,8 @@ import com.video.liveshow.utils.WordUtil;
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
  * Created by cxf on 2018/6/20.

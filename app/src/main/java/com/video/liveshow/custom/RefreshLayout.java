@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -355,7 +356,7 @@ public class RefreshLayout extends FrameLayout {
             mDownStatus = DOWN_3;
             mHeadTextView.setText(mDown3);
         }
-        ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), -mRefreshHeight);
+        @SuppressLint("ObjectAnimatorBinding") ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), -mRefreshHeight);
         a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -401,7 +402,7 @@ public class RefreshLayout extends FrameLayout {
             mUpStatus = UP_3;
             mFootTextView.setText(mUp3);
         }
-        ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), mLoadMoreHeight);
+        @SuppressLint("ObjectAnimatorBinding") ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), mLoadMoreHeight);
         a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -444,7 +445,7 @@ public class RefreshLayout extends FrameLayout {
             mDownStatus = DOWN_1;
             mHeadTextView.setText(mDown1);
         }
-        ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), 0);
+        @SuppressLint("ObjectAnimatorBinding") ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), 0);
         a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -478,7 +479,7 @@ public class RefreshLayout extends FrameLayout {
             mUpStatus = UP_1;
             mFootTextView.setText(mUp1);
         }
-        ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), 0);
+        @SuppressLint("ObjectAnimatorBinding") ObjectAnimator a = ObjectAnimator.ofFloat(this, "scrollY", getScrollY(), 0);
         a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {

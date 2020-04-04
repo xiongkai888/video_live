@@ -6,8 +6,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.video.liveshow.AppContext;
 
 import java.io.File;
@@ -40,14 +38,15 @@ public class ImgLoader {
     }
 
     public static void displayBitmap(String url, final BitmapCallback bitmapCallback) {
-        sManager.load(url).asBitmap().skipMemoryCache(true).into(new SimpleTarget<Bitmap>() {
-            @Override
-            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
-                if (bitmapCallback != null) {
-                    bitmapCallback.callback(bitmap);
-                }
-            }
-        });
+//        sManager.load(url).asBitmap().skipMemoryCache(true).into(new SimpleTarget<Bitmap>() {
+//            @Override
+//            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+//                if (bitmapCallback != null) {
+//                    bitmapCallback.callback(bitmap);
+//                }
+//            }
+//        });
+
     }
 
     public static void display(String url, ImageView imageView, int placeholderRes) {

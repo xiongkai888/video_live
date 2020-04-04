@@ -2,7 +2,6 @@ package com.video.liveshow.custom;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -35,6 +34,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
  * Created by cxf on 2018/7/25.

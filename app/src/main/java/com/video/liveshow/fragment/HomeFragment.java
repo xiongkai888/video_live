@@ -1,9 +1,6 @@
 package com.video.liveshow.fragment;
 
 import android.graphics.Typeface;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.View;
@@ -12,6 +9,10 @@ import android.widget.RadioGroup;
 
 import com.video.liveshow.R;
 import com.video.liveshow.activity.MainActivity;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * Created by cxf on 2018/6/5.

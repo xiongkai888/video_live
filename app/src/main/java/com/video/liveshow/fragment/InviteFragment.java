@@ -3,8 +3,6 @@ package com.video.liveshow.fragment;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
@@ -25,6 +23,9 @@ import com.video.liveshow.utils.DialogUitl;
 import com.video.liveshow.utils.DpUtil;
 import com.video.liveshow.utils.MD5Util;
 import com.video.liveshow.utils.ToastUtil;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 
 /**
  * Created by cxf on 2017/9/30.

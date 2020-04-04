@@ -5,8 +5,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 
 import com.tencent.ugc.TXVideoEditConstants;
@@ -19,6 +17,9 @@ import com.video.liveshow.utils.L;
 import com.video.liveshow.utils.ToastUtil;
 import com.video.liveshow.utils.VideoEditWrap;
 import com.video.liveshow.utils.WordUtil;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * Created by cxf on 2018/6/21.

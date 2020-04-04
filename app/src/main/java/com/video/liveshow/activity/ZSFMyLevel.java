@@ -1,6 +1,5 @@
 package com.video.liveshow.activity;
 
-import android.support.v7.widget.LinearLayoutManager;
 
 import com.alibaba.fastjson.JSON;
 import com.video.liveshow.R;
@@ -13,6 +12,8 @@ import com.video.liveshow.http.HttpUtil;
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class ZSFMyLevel extends AbsActivity {
 

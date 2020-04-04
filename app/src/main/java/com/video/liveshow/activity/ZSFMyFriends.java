@@ -1,6 +1,5 @@
 package com.video.liveshow.activity;
 
-import android.support.v7.widget.LinearLayoutManager;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -14,6 +13,8 @@ import com.video.liveshow.http.HttpCallback;
 import com.video.liveshow.http.HttpUtil;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class ZSFMyFriends extends AbsActivity {
 

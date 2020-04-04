@@ -7,16 +7,17 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.Dimension;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.TypedValue;
 import android.view.View;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.Dimension;
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 /**
  * RecyclerView分割线
@@ -44,50 +45,51 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     /**
      * 是否只留空白，不画分割线
      */
-    private boolean onlySetItemOffsetsButNoDraw=false;
+    private boolean onlySetItemOffsetsButNoDraw = false;
 
     /**
      * 是否是线性布局
      */
-    private boolean isLinearLayoutManager=true;
+    private boolean isLinearLayoutManager = true;
     /**
      * 布局方向
      */
-    private int orientation=VERTICAL_LIST;
+    private int orientation = VERTICAL_LIST;
 
     public ItemDecoration(Context context) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);
         a.recycle();
-        this.dividerHeight=mDivider.getIntrinsicHeight();
-        this.dividerWidth=mDivider.getIntrinsicWidth();
+        this.dividerHeight = mDivider.getIntrinsicHeight();
+        this.dividerWidth = mDivider.getIntrinsicWidth();
     }
 
     /**
      * 自定义分割线
      *
      * @param context
-     * @param drawableId           分割线图片
+     * @param drawableId 分割线图片
      */
     public ItemDecoration(Context context, @DrawableRes int drawableId) {
         mDivider = ContextCompat.getDrawable(context, drawableId);
-        this.dividerHeight=mDivider.getIntrinsicHeight();
-        this.dividerWidth=mDivider.getIntrinsicWidth();
+        this.dividerHeight = mDivider.getIntrinsicHeight();
+        this.dividerWidth = mDivider.getIntrinsicWidth();
     }
 
     /**
      * 自定义分割线
      * 也可以使用{@link Canvas#drawRect(float, float, float, float, Paint)}或者{@link Canvas#drawText(String, float, float, Paint)}等等
      * 结合{@link Paint}去绘制各式各样的分割线
+     *
      * @param context
-     * @param color  整型颜色值，非资源id
+     * @param color         整型颜色值，非资源id
      * @param dividerWidth  单位为dp
-     * @param dividerHeight  单位为dp
+     * @param dividerHeight 单位为dp
      */
     public ItemDecoration(Context context, @ColorInt int color, @Dimension float dividerWidth, @Dimension float dividerHeight) {
         mDivider = new ColorDrawable(color);
-        this.dividerWidth= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dividerWidth,context.getResources().getDisplayMetrics());
-        this.dividerHeight= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dividerHeight,context.getResources().getDisplayMetrics());
+        this.dividerWidth = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dividerWidth, context.getResources().getDisplayMetrics());
+        this.dividerHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dividerHeight, context.getResources().getDisplayMetrics());
     }
 
 
@@ -96,44 +98,45 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
      * 水平滚动,item高度充满，宽度自适应
      * 在itemView绘制完成之前调用，也就是说此方法draw出来的效果将会在itemView的下面
      * onDrawOver方法draw出来的效果将叠加在itemView的上面
+     *
      * @param c
      * @param parent
      * @param state
      */
     @Override
     public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        if(onlySetItemOffsetsButNoDraw){
+        if (onlySetItemOffsetsButNoDraw) {
             return;
         }
-        if(isLinearLayoutManager){
-            drawLinearItemDivider(c,parent);
-        }else{
+        if (isLinearLayoutManager) {
+            drawLinearItemDivider(c, parent);
+        } else {
             drawHorizontalLine(c, parent);
             drawVerticalLine(c, parent);
         }
 
     }
 
-    private void drawLinearItemDivider(Canvas c, RecyclerView parent){
+    private void drawLinearItemDivider(Canvas c, RecyclerView parent) {
         int spanCount = getSpanCount(parent);
         int allChildCount = parent.getAdapter().getItemCount();
-        int top=0,bottom=0,left=0,right=0;
+        int top = 0, bottom = 0, left = 0, right = 0;
         for (int i = 0; i < parent.getChildCount(); i++) {
             final View child = parent.getChildAt(i);
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
-            if(orientation==VERTICAL_LIST){//画横线
+            if (orientation == VERTICAL_LIST) {//画横线
                 left = child.getLeft() - params.leftMargin;
                 right = child.getRight() + params.rightMargin;
-                if(drawBorderTopAndBottom){
+                if (drawBorderTopAndBottom) {
                     //加上第一条
-                    if(isFirstRaw(parent,params.getViewLayoutPosition(),spanCount)){
-                        top=child.getTop()-params.topMargin-dividerHeight;
+                    if (isFirstRaw(parent, params.getViewLayoutPosition(), spanCount)) {
+                        top = child.getTop() - params.topMargin - dividerHeight;
                         bottom = top + dividerHeight;
                         mDivider.setBounds(left, top, right, bottom);
                         mDivider.draw(c);
                     }
-                }else{
-                    if(isLastRaw(parent,params.getViewLayoutPosition(),spanCount,allChildCount)){
+                } else {
+                    if (isLastRaw(parent, params.getViewLayoutPosition(), spanCount, allChildCount)) {
                         continue;
                     }
                 }
@@ -141,19 +144,19 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
                 bottom = top + dividerHeight;
                 mDivider.setBounds(left, top, right, bottom);
                 mDivider.draw(c);
-            }else{//画竖线
-                top=child.getTop()-params.topMargin;
-                bottom=child.getBottom()+params.bottomMargin;
-                if(drawBorderLeftAndRight){
+            } else {//画竖线
+                top = child.getTop() - params.topMargin;
+                bottom = child.getBottom() + params.bottomMargin;
+                if (drawBorderLeftAndRight) {
                     //加上第一条
-                    if(isFirstColumn(parent,params.getViewLayoutPosition(),spanCount)){
-                        left=child.getLeft()-params.leftMargin-dividerWidth;
+                    if (isFirstColumn(parent, params.getViewLayoutPosition(), spanCount)) {
+                        left = child.getLeft() - params.leftMargin - dividerWidth;
                         right = left + dividerWidth;
                         mDivider.setBounds(left, top, right, bottom);
                         mDivider.draw(c);
                     }
-                }else{
-                    if(isLastColum(parent,params.getViewLayoutPosition(),spanCount,allChildCount)){
+                } else {
+                    if (isLastColum(parent, params.getViewLayoutPosition(), spanCount, allChildCount)) {
                         continue;
                     }
                 }
@@ -163,35 +166,35 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
                 mDivider.draw(c);
             }
         }
-        if(orientation==VERTICAL_LIST){
-            if(drawBorderLeftAndRight){
+        if (orientation == VERTICAL_LIST) {
+            if (drawBorderLeftAndRight) {
                 top = parent.getPaddingTop();
                 bottom = parent.getHeight() - parent.getPaddingBottom();
-                left=parent.getPaddingLeft();
-                right=left+dividerWidth;
+                left = parent.getPaddingLeft();
+                right = left + dividerWidth;
                 //画左边界
-                mDivider.setBounds(left,top,right,bottom);
+                mDivider.setBounds(left, top, right, bottom);
                 mDivider.draw(c);
-                left=parent.getWidth()-parent.getPaddingRight()-dividerWidth;
-                right=left+dividerWidth;
-//                Log.e(TAG, "drawLinearItemDivider: "+parent.getWidth()+"#"+parent.getPaddingLeft()+"#"+mDivider.getIntrinsicWidth() );
+                left = parent.getWidth() - parent.getPaddingRight() - dividerWidth;
+                right = left + dividerWidth;
+                //                Log.e(TAG, "drawLinearItemDivider: "+parent.getWidth()+"#"+parent.getPaddingLeft()+"#"+mDivider.getIntrinsicWidth() );
                 //画右边界
-                mDivider.setBounds(left,top,right,bottom);
+                mDivider.setBounds(left, top, right, bottom);
                 mDivider.draw(c);
             }
-        }else if(orientation==HORIZONTAL_LIST){
-            if(drawBorderTopAndBottom){
-                left=parent.getPaddingLeft();
-                right=parent.getWidth()-parent.getPaddingRight();
-                top=parent.getPaddingTop();
-                bottom=top+dividerHeight;
+        } else if (orientation == HORIZONTAL_LIST) {
+            if (drawBorderTopAndBottom) {
+                left = parent.getPaddingLeft();
+                right = parent.getWidth() - parent.getPaddingRight();
+                top = parent.getPaddingTop();
+                bottom = top + dividerHeight;
                 //画上边界
-                mDivider.setBounds(left,top,right,bottom);
+                mDivider.setBounds(left, top, right, bottom);
                 mDivider.draw(c);
-                top=parent.getHeight()-parent.getPaddingBottom()-dividerHeight;
-                bottom=top+dividerHeight;
+                top = parent.getHeight() - parent.getPaddingBottom() - dividerHeight;
+                bottom = top + dividerHeight;
                 //画下边界
-                mDivider.setBounds(left,top,right,bottom);
+                mDivider.setBounds(left, top, right, bottom);
                 mDivider.draw(c);
             }
         }
@@ -199,6 +202,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
 
     /**
      * 画水平分割线
+     *
      * @param c
      * @param parent
      */
@@ -207,32 +211,32 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
         for (int i = 0; i < parent.getChildCount(); i++) {
             final View child = parent.getChildAt(i);
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
-            int top=0,bottom=0,left=0,right=0;
+            int top = 0, bottom = 0, left = 0, right = 0;
             left = child.getLeft() - params.leftMargin;
             //因为getItemOffsets中为竖线留了空隙，所以要加上分割线的宽度（在此处处理，下面不用处理）
-            right = child.getRight() + params.rightMargin+ dividerWidth;
-            if(i==parent.getChildCount()-1 && !drawBorderLeftAndRight){
-                right-=dividerWidth;//防止最后一个越界
+            right = child.getRight() + params.rightMargin + dividerWidth;
+            if (i == parent.getChildCount() - 1 && !drawBorderLeftAndRight) {
+                right -= dividerWidth;//防止最后一个越界
             }
 
-            if(isFirstColumn(parent,params.getViewLayoutPosition(),spanCount) && drawBorderLeftAndRight){
-                left-=dividerWidth;//下面不用处理
+            if (isFirstColumn(parent, params.getViewLayoutPosition(), spanCount) && drawBorderLeftAndRight) {
+                left -= dividerWidth;//下面不用处理
             }
-            if(drawBorderTopAndBottom){
+            if (drawBorderTopAndBottom) {
                 //加上第一条
-                if(isFirstRaw(parent,params.getViewLayoutPosition(),spanCount)){
-                    top=child.getTop()-params.topMargin-dividerHeight;
+                if (isFirstRaw(parent, params.getViewLayoutPosition(), spanCount)) {
+                    top = child.getTop() - params.topMargin - dividerHeight;
                     bottom = top + dividerHeight;
                     mDivider.setBounds(left, top, right, bottom);
                     mDivider.draw(c);
                 }
-            }else{
+            } else {
                 int allChildCount = parent.getAdapter().getItemCount();
-                if(isLastRaw(parent,params.getViewLayoutPosition(),spanCount,allChildCount)){
+                if (isLastRaw(parent, params.getViewLayoutPosition(), spanCount, allChildCount)) {
                     continue;
                 }
             }
-//            Log.e(TAG, "drawVertical: "+params.getViewLayoutPosition()+"@@"+mDivider.getIntrinsicWidth()+"#"+parent.getLayoutManager().getLeftDecorationWidth(child) );
+            //            Log.e(TAG, "drawVertical: "+params.getViewLayoutPosition()+"@@"+mDivider.getIntrinsicWidth()+"#"+parent.getLayoutManager().getLeftDecorationWidth(child) );
             top = child.getBottom() + params.bottomMargin;
             bottom = top + dividerHeight;
             mDivider.setBounds(left, top, right, bottom);
@@ -242,6 +246,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
 
     /**
      * 画垂直分割线
+     *
      * @param c
      * @param parent
      */
@@ -249,25 +254,25 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
         int spanCount = getSpanCount(parent);
         for (int i = 0; i < parent.getChildCount(); i++) {
             final View child = parent.getChildAt(i);
-            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child .getLayoutParams();
-            int left=0,right=0,top=0,bottom=0;
-            top=child.getTop()-params.topMargin;
+            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            int left = 0, right = 0, top = 0, bottom = 0;
+            top = child.getTop() - params.topMargin;
             //因为getItemOffsets中为横线留了空隙，所以要加上分割线的高度(上下加一处即可)
-            bottom=child.getBottom()+params.bottomMargin/**+mDivider.getIntrinsicHeight()*/;
-//            if(isFirstRaw(parent,params.getViewLayoutPosition(),spanCount) && drawBorderTopAndBottom){
-//                        top-=mDivider.getIntrinsicHeight();
-//            }
-            if(drawBorderLeftAndRight){
+            bottom = child.getBottom() + params.bottomMargin/**+mDivider.getIntrinsicHeight()*/;
+            //            if(isFirstRaw(parent,params.getViewLayoutPosition(),spanCount) && drawBorderTopAndBottom){
+            //                        top-=mDivider.getIntrinsicHeight();
+            //            }
+            if (drawBorderLeftAndRight) {
                 //加上第一条
-                if(isFirstColumn(parent,params.getViewLayoutPosition(),spanCount)){
-                    left=child.getLeft()-params.leftMargin-dividerWidth;
+                if (isFirstColumn(parent, params.getViewLayoutPosition(), spanCount)) {
+                    left = child.getLeft() - params.leftMargin - dividerWidth;
                     right = left + dividerWidth;
                     mDivider.setBounds(left, top, right, bottom);
                     mDivider.draw(c);
                 }
-            }else{
+            } else {
                 int allChildCount = parent.getAdapter().getItemCount();
-                if(isLastColum(parent,params.getViewLayoutPosition(),spanCount,allChildCount)){
+                if (isLastColum(parent, params.getViewLayoutPosition(), spanCount, allChildCount)) {
                     continue;
                 }
             }
@@ -281,6 +286,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
 
     /**
      * item的偏移，如果不设置，也能画线，但是画在了item后面(被item挡住了，可以通过设置item背景透明度证实)
+     *
      * @param outRect
      * @param view
      * @param parent
@@ -289,136 +295,136 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
-        if(!(layoutManager instanceof LinearLayoutManager)){
+        if (!(layoutManager instanceof LinearLayoutManager)) {
             throw new IllegalStateException("The LayoutManager must be LinearLayoutManager or it's subclass!!!");
         }
-        isLinearLayoutManager=(layoutManager instanceof LinearLayoutManager) && !(layoutManager instanceof GridLayoutManager);
-        if(isLinearLayoutManager){
-            orientation=((LinearLayoutManager) layoutManager).getOrientation();
-        }else{
-            orientation=(layoutManager instanceof GridLayoutManager)?((GridLayoutManager) layoutManager).getOrientation():((StaggeredGridLayoutManager)layoutManager).getOrientation();
+        isLinearLayoutManager = (layoutManager instanceof LinearLayoutManager) && !(layoutManager instanceof GridLayoutManager);
+        if (isLinearLayoutManager) {
+            orientation = ((LinearLayoutManager) layoutManager).getOrientation();
+        } else {
+            orientation = (layoutManager instanceof GridLayoutManager) ? ((GridLayoutManager) layoutManager).getOrientation() : ((StaggeredGridLayoutManager) layoutManager).getOrientation();
         }
         int spanCount = getSpanCount(parent);
         int childCount = parent.getAdapter().getItemCount();
-        int itemPosition=((RecyclerView.LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
-//        Log.e(TAG, "getItemOffsets: "+childCount+"$"+spanCount+"$"+itemPosition );
-        boolean isLastRaw=isLastRaw(parent, itemPosition, spanCount, childCount);
-        boolean isLastColum=isLastColum(parent, itemPosition, spanCount, childCount);
-        boolean isFirstRaw=isFirstRaw(parent,itemPosition,spanCount);
-        boolean isFirstColumn=isFirstColumn(parent,itemPosition,spanCount);
-        int left=0,top=0,right=0,bottom=0;
-        if(isLinearLayoutManager){
-            if(orientation==VERTICAL_LIST){
+        int itemPosition = ((RecyclerView.LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
+        //        Log.e(TAG, "getItemOffsets: "+childCount+"$"+spanCount+"$"+itemPosition );
+        boolean isLastRaw = isLastRaw(parent, itemPosition, spanCount, childCount);
+        boolean isLastColum = isLastColum(parent, itemPosition, spanCount, childCount);
+        boolean isFirstRaw = isFirstRaw(parent, itemPosition, spanCount);
+        boolean isFirstColumn = isFirstColumn(parent, itemPosition, spanCount);
+        int left = 0, top = 0, right = 0, bottom = 0;
+        if (isLinearLayoutManager) {
+            if (orientation == VERTICAL_LIST) {
                 //垂直滚动线性布局
-                bottom=dividerHeight;
-                if(isLastRaw && !drawBorderTopAndBottom){
-                    bottom=0;
+                bottom = dividerHeight;
+                if (isLastRaw && !drawBorderTopAndBottom) {
+                    bottom = 0;
                 }
-                if(isFirstRaw && drawBorderTopAndBottom){
-                    top=dividerHeight;
+                if (isFirstRaw && drawBorderTopAndBottom) {
+                    top = dividerHeight;
                 }
-                if(drawBorderLeftAndRight){
-                    left=dividerWidth;
-                    right=dividerWidth;
+                if (drawBorderLeftAndRight) {
+                    left = dividerWidth;
+                    right = dividerWidth;
                 }
-            }else if(orientation==HORIZONTAL_LIST){
-                right=dividerWidth;
-                if(isLastColum && !drawBorderLeftAndRight){
-                    right=0;
+            } else if (orientation == HORIZONTAL_LIST) {
+                right = dividerWidth;
+                if (isLastColum && !drawBorderLeftAndRight) {
+                    right = 0;
                 }
-                if(isFirstColumn && drawBorderLeftAndRight){
-                    left=dividerWidth;
+                if (isFirstColumn && drawBorderLeftAndRight) {
+                    left = dividerWidth;
                 }
-                if(drawBorderTopAndBottom){
-                    top=dividerHeight;
-                    bottom=dividerHeight;
+                if (drawBorderTopAndBottom) {
+                    top = dividerHeight;
+                    bottom = dividerHeight;
                 }
             }
-        }else{
-            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager)layoutManager).getSpanSizeLookup();
+        } else {
+            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager) layoutManager).getSpanSizeLookup();
             int spanIndexLeft = spanSizeLookup.getSpanIndex(itemPosition, spanCount);//左边的跨度索引值[0,spanCount)之间
             int spanIndexRight = spanIndexLeft - 1 + spanSizeLookup.getSpanSize(itemPosition);//右边的跨度索引值[0,spanCount)之间
-//            Log.e(TAG, "getItemOffsets: "+spanIndexLeft +"#"+spanIndexRight+"#"+itemPosition+"$$$"+spanSizeLookup.getSpanGroupIndex(itemPosition, spanCount));
-            if(orientation==VERTICAL_LIST){
-                if(drawBorderLeftAndRight){
+            //            Log.e(TAG, "getItemOffsets: "+spanIndexLeft +"#"+spanIndexRight+"#"+itemPosition+"$$$"+spanSizeLookup.getSpanGroupIndex(itemPosition, spanCount));
+            if (orientation == VERTICAL_LIST) {
+                if (drawBorderLeftAndRight) {
                     //注：如果此处不能整除，会造成divider的宽或高不统一的bug（下同），因为Rect不支持float，所以暂无法解决
-                    left=dividerWidth * (spanCount - spanIndexLeft) / spanCount;
-                    right=dividerWidth * (spanIndexRight + 1) / spanCount;
-                }else{
+                    left = dividerWidth * (spanCount - spanIndexLeft) / spanCount;
+                    right = dividerWidth * (spanIndexRight + 1) / spanCount;
+                } else {
                     left = dividerWidth * spanIndexLeft / spanCount;
                     right = dividerWidth * (spanCount - spanIndexRight - 1) / spanCount;
                 }
-                if(drawBorderTopAndBottom){
+                if (drawBorderTopAndBottom) {
                     if (spanSizeLookup.getSpanGroupIndex(itemPosition, spanCount) == 0) {
                         top = dividerHeight;
                     } else {
                         top = 0;
                     }
                     bottom = dividerHeight;
-                }else{
+                } else {
                     if (isLastRaw) {
-                        bottom=0;
+                        bottom = 0;
                     } else {
                         bottom = dividerHeight;
                     }
-                    top=0;
+                    top = 0;
                 }
-            }else if(orientation==HORIZONTAL_LIST){
-                if(drawBorderTopAndBottom){
-                    top=dividerHeight * (spanCount - spanIndexLeft) / spanCount;
-                    bottom=dividerHeight * (spanIndexRight + 1) / spanCount;
-                }else{
+            } else if (orientation == HORIZONTAL_LIST) {
+                if (drawBorderTopAndBottom) {
+                    top = dividerHeight * (spanCount - spanIndexLeft) / spanCount;
+                    bottom = dividerHeight * (spanIndexRight + 1) / spanCount;
+                } else {
                     top = dividerHeight * spanIndexLeft / spanCount;
                     bottom = dividerHeight * (spanCount - spanIndexRight - 1) / spanCount;
                 }
-                if(drawBorderLeftAndRight){
-                    if(isFirstColumn){
-                        left=dividerWidth;
-                    }else{
-                        left=0;
+                if (drawBorderLeftAndRight) {
+                    if (isFirstColumn) {
+                        left = dividerWidth;
+                    } else {
+                        left = 0;
                     }
-                    right=dividerWidth;
-                }else{
-                    if(isLastColum){
-                        right=0;
-                    }else{
-                        right=dividerWidth;
+                    right = dividerWidth;
+                } else {
+                    if (isLastColum) {
+                        right = 0;
+                    } else {
+                        right = dividerWidth;
                     }
-                    left=0;
+                    left = 0;
                 }
             }
         }
         //Log.e(TAG, "getItemOffsets: "+left+"@"+top+"#"+right+"$"+bottom+"%"+itemPosition );
-        outRect.set(left,top,right,bottom);
+        outRect.set(left, top, right, bottom);
     }
 
-    private boolean isFirstRaw(RecyclerView parent, int pos, int spanCount){
+    private boolean isFirstRaw(RecyclerView parent, int pos, int spanCount) {
         if (!isLinearLayoutManager) {
-            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager)parent.getLayoutManager()).getSpanSizeLookup();
+            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager) parent.getLayoutManager()).getSpanSizeLookup();
             int spanIndexLeft = spanSizeLookup.getSpanIndex(pos, spanCount);
             if (orientation == GridLayoutManager.VERTICAL) {
-//                if(pos<spanCount){
-//                    return true;
-//                }
+                //                if(pos<spanCount){
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
-                if(spanSizeLookup.getSpanGroupIndex(pos,spanCount)==0){
+                if (spanSizeLookup.getSpanGroupIndex(pos, spanCount) == 0) {
                     return true;
                 }
-            }else{
-//                if(pos%spanCount==0){
-//                    return true;
-//                }
+            } else {
+                //                if(pos%spanCount==0){
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
-                if(spanIndexLeft==0){
+                if (spanIndexLeft == 0) {
                     return true;
                 }
             }
-        }else{
+        } else {
             if (orientation == LinearLayoutManager.VERTICAL) {
-                if(pos==0){
+                if (pos == 0) {
                     return true;
                 }
-            }else{
+            } else {
                 //每一个都是第一行，也是最后一行
                 return true;
             }
@@ -426,33 +432,33 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
         return false;
     }
 
-    private boolean isFirstColumn(RecyclerView parent, int pos, int spanCount){
+    private boolean isFirstColumn(RecyclerView parent, int pos, int spanCount) {
         if (!isLinearLayoutManager) {
-            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager)parent.getLayoutManager()).getSpanSizeLookup();
+            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager) parent.getLayoutManager()).getSpanSizeLookup();
             int spanIndexLeft = spanSizeLookup.getSpanIndex(pos, spanCount);
             if (orientation == GridLayoutManager.VERTICAL) {
-//                if(pos%spanCount==0){
-//                    return true;
-//                }
+                //                if(pos%spanCount==0){
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
-                if(spanIndexLeft==0){
+                if (spanIndexLeft == 0) {
                     return true;
                 }
-            }else{
-//                if(pos<spanCount){
-//                    return true;
-//                }
+            } else {
+                //                if(pos<spanCount){
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
-                if(spanSizeLookup.getSpanGroupIndex(pos,spanCount)==0){
+                if (spanSizeLookup.getSpanGroupIndex(pos, spanCount) == 0) {
                     return true;
                 }
             }
-        }else{
+        } else {
             if (orientation == LinearLayoutManager.VERTICAL) {
                 //每一个都是第一列，也是最后一列
                 return true;
-            }else{
-                if(pos==0){
+            } else {
+                if (pos == 0) {
                     return true;
                 }
             }
@@ -462,41 +468,41 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
 
     private boolean isLastColum(RecyclerView parent, int pos, int spanCount, int childCount) {
         if (!isLinearLayoutManager) {
-            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager)parent.getLayoutManager()).getSpanSizeLookup();
+            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager) parent.getLayoutManager()).getSpanSizeLookup();
             int spanIndexLeft = spanSizeLookup.getSpanIndex(pos, spanCount);
             if (orientation == GridLayoutManager.VERTICAL) {
                 //最后一列或者不能整除的情况下最后一个
-//                if ((pos + 1) % spanCount == 0 /**|| pos==childCount-1*/){// 如果是最后一列
-//                    return true;
-//                }
+                //                if ((pos + 1) % spanCount == 0 /**|| pos==childCount-1*/){// 如果是最后一列
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
-                if(spanIndexLeft==spanCount-1 || spanCount==spanSizeLookup.getSpanSize(pos) || pos==childCount-1){
+                if (spanIndexLeft == spanCount - 1 || spanCount == spanSizeLookup.getSpanSize(pos) || pos == childCount - 1) {
                     return true;
                 }
-            }else{
-//                if(pos>=childCount-spanCount && childCount%spanCount==0){
-//                    //整除的情况判断最后一整列
-//                    return true;
-//                }else if(childCount%spanCount!=0 && pos>=spanCount*(childCount/spanCount)){
-//                    //不能整除的情况只判断最后几个
-//                    return true;
-//                }
+            } else {
+                //                if(pos>=childCount-spanCount && childCount%spanCount==0){
+                //                    //整除的情况判断最后一整列
+                //                    return true;
+                //                }else if(childCount%spanCount!=0 && pos>=spanCount*(childCount/spanCount)){
+                //                    //不能整除的情况只判断最后几个
+                //                    return true;
+                //                }
                 //=========================另一种方案==============================
-//                if(pos>=childCount-spanCount){
-//                    return true;
-//                }
+                //                if(pos>=childCount-spanCount){
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
-                int lastItemSpanGroupIndex=spanSizeLookup.getSpanGroupIndex(childCount-1,spanCount);
-                if(spanSizeLookup.getSpanGroupIndex(pos,spanCount)==lastItemSpanGroupIndex){
+                int lastItemSpanGroupIndex = spanSizeLookup.getSpanGroupIndex(childCount - 1, spanCount);
+                if (spanSizeLookup.getSpanGroupIndex(pos, spanCount) == lastItemSpanGroupIndex) {
                     return true;//如果与最后一个元素同组则判定为最后一行
                 }
             }
-        }else{
+        } else {
             if (orientation == LinearLayoutManager.VERTICAL) {
                 //每一个都是第一列，也是最后一列
                 return true;
-            }else{
-                if(pos==childCount-1){
+            } else {
+                if (pos == childCount - 1) {
                     return true;
                 }
             }
@@ -506,50 +512,50 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
 
     private boolean isLastRaw(RecyclerView parent, int pos, int spanCount, int childCount) {
         if (!isLinearLayoutManager) {
-            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager)parent.getLayoutManager()).getSpanSizeLookup();
+            GridLayoutManager.SpanSizeLookup spanSizeLookup = ((GridLayoutManager) parent.getLayoutManager()).getSpanSizeLookup();
             int spanIndexLeft = spanSizeLookup.getSpanIndex(pos, spanCount);
             if (orientation == GridLayoutManager.VERTICAL) {
-//                if(pos>=childCount-spanCount && childCount%spanCount==0){
-//                    //整除的情况判断最后一整行
-//                    return true;
-//                }else if(childCount%spanCount!=0 && pos>=spanCount*(childCount/spanCount)){
-//                    //不能整除的情况只判断最后几个
-//                    return true;
-//                }
+                //                if(pos>=childCount-spanCount && childCount%spanCount==0){
+                //                    //整除的情况判断最后一整行
+                //                    return true;
+                //                }else if(childCount%spanCount!=0 && pos>=spanCount*(childCount/spanCount)){
+                //                    //不能整除的情况只判断最后几个
+                //                    return true;
+                //                }
                 //=======================另一种方案===============================
-//                if(pos>=childCount-spanCount){
-//                    return true;
-//                }
+                //                if(pos>=childCount-spanCount){
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
                 //判断最后一行是否充满整行
-                boolean flag=spanSizeLookup.getSpanIndex(childCount-1, spanCount)==spanCount-1 || spanCount==spanSizeLookup.getSpanSize(childCount-1);
-                int lastItemSpanGroupIndex=spanSizeLookup.getSpanGroupIndex(childCount-1,spanCount);
-                if(spanSizeLookup.getSpanGroupIndex(pos,spanCount)==lastItemSpanGroupIndex){
+                boolean flag = spanSizeLookup.getSpanIndex(childCount - 1, spanCount) == spanCount - 1 || spanCount == spanSizeLookup.getSpanSize(childCount - 1);
+                int lastItemSpanGroupIndex = spanSizeLookup.getSpanGroupIndex(childCount - 1, spanCount);
+                if (spanSizeLookup.getSpanGroupIndex(pos, spanCount) == lastItemSpanGroupIndex) {
                     return true;//如果与最后一个元素同组则判定为最后一行
                 }
-//                if(flag){
-//                }else{
-//                    //没有充满则前一行跟最后一行都判定为最后一行
-//                    if(spanSizeLookup.getSpanGroupIndex(pos,spanCount)==lastItemSpanGroupIndex || spanSizeLookup.getSpanGroupIndex(pos,spanCount)==lastItemSpanGroupIndex-1){
-//                        return true;
-//                    }
-//                }
-            }else{
+                //                if(flag){
+                //                }else{
+                //                    //没有充满则前一行跟最后一行都判定为最后一行
+                //                    if(spanSizeLookup.getSpanGroupIndex(pos,spanCount)==lastItemSpanGroupIndex || spanSizeLookup.getSpanGroupIndex(pos,spanCount)==lastItemSpanGroupIndex-1){
+                //                        return true;
+                //                    }
+                //                }
+            } else {
                 //最后一行或者不能整除的情况下最后一个
-//                if ((pos + 1) % spanCount == 0 /**|| pos==childCount-1*/){// 如果是最后一行
-//                    return true;
-//                }
+                //                if ((pos + 1) % spanCount == 0 /**|| pos==childCount-1*/){// 如果是最后一行
+                //                    return true;
+                //                }
                 //=========================另一种方案，兼容每个item的spanSize不同的情况==============================
-                if(spanIndexLeft==spanCount-1 || spanCount==spanSizeLookup.getSpanSize(pos) || pos==childCount-1){
+                if (spanIndexLeft == spanCount - 1 || spanCount == spanSizeLookup.getSpanSize(pos) || pos == childCount - 1) {
                     return true;
                 }
             }
-        }else{
+        } else {
             if (orientation == LinearLayoutManager.VERTICAL) {
-                if(pos==childCount-1){
+                if (pos == childCount - 1) {
                     return true;
                 }
-            }else{
+            } else {
                 //每一个都是第一行，也是最后一行
                 return true;
             }

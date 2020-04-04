@@ -1,9 +1,6 @@
 package com.video.liveshow.adapter;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +10,10 @@ import com.video.liveshow.utils.FaceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
  * Created by cxf on 2018/7/11.

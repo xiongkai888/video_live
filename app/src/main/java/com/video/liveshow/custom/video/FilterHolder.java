@@ -2,8 +2,6 @@ package com.video.liveshow.custom.video;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +13,9 @@ import com.video.liveshow.bean.FilterBean;
 import com.video.liveshow.custom.ItemDecoration;
 import com.video.liveshow.interfaces.OnItemClickListener;
 import com.video.liveshow.utils.BitmapUtil;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by cxf on 2018/6/23.

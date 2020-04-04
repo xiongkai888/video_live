@@ -2,7 +2,6 @@ package com.video.liveshow.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
@@ -21,6 +20,8 @@ import com.video.liveshow.interfaces.CommonCallback;
 import com.video.liveshow.utils.DpUtil;
 import com.video.liveshow.utils.MD5Util;
 import com.video.liveshow.utils.ToastUtil;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * Created by cxf on 2018/8/6.

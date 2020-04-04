@@ -72,7 +72,7 @@
             />
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/musicClass"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -89,7 +89,7 @@
         android:orientation="horizontal"
         >
 
-        <android.support.v4.widget.Space
+        <Space
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -115,7 +115,7 @@
             android:src="@mipmap/icon_music_top"
             />
 
-        <android.support.v4.widget.Space
+        <Space
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -131,7 +131,7 @@
             android:textColor="@color/fg_check_music"
             />
 
-        <android.support.v4.widget.Space
+        <Space
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -147,7 +147,7 @@
             android:textColor="@color/fg_check_music"
             />
 
-        <android.support.v4.widget.Space
+        <Space
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"

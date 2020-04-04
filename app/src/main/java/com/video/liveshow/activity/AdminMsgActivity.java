@@ -1,7 +1,6 @@
 package com.video.liveshow.activity;
 
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
 
 import com.alibaba.fastjson.JSON;
 import com.video.liveshow.Constants;
@@ -16,6 +15,8 @@ import com.video.liveshow.interfaces.OnItemClickListener;
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
  * Created by cxf on 2018/7/27.

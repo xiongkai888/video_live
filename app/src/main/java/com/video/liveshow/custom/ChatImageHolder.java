@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,8 @@ import com.video.liveshow.adapter.ChatImageAdapter;
 import com.video.liveshow.glide.ImgLoader;
 
 import java.util.List;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by cxf on 2018/8/1.

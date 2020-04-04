@@ -2,11 +2,12 @@ package com.video.liveshow.custom;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.video.liveshow.R;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by cxf on 2018/6/9.

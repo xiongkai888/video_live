@@ -1,9 +1,6 @@
 package com.video.liveshow.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
@@ -19,6 +16,10 @@ import com.video.liveshow.activity.MainActivity;
 import com.video.liveshow.custom.DrawableRadioButton;
 import com.video.liveshow.jpush.JMessageUtil;
 import com.video.liveshow.utils.DpUtil;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * Created by cxf on 2018/6/5.

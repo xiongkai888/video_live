@@ -1,7 +1,6 @@
 package com.video.liveshow.adapter;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,6 +9,8 @@ import com.video.liveshow.glide.ImgLoader;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
  * Created by cxf on 2018/8/1.

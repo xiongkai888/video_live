@@ -3,8 +3,6 @@ package com.video.liveshow.activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +21,9 @@ import com.video.liveshow.utils.DialogUitl;
 import com.video.liveshow.utils.ToastUtil;
 
 import java.io.File;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class ZSFRecordDetailActivity extends AbsActivity implements View.OnClickListener {
 

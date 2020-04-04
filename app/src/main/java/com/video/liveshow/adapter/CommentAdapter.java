@@ -1,7 +1,6 @@
 package com.video.liveshow.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -29,6 +28,8 @@ import com.video.liveshow.utils.WordUtil;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by cxf on 2018/6/12.

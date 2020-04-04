@@ -1,7 +1,5 @@
 package com.video.liveshow.activity;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.widget.TextView;
 
@@ -18,6 +16,8 @@ import com.video.liveshow.utils.SharedSdkUitl;
 
 import java.util.List;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import cn.sharesdk.framework.Platform;
 
 /**

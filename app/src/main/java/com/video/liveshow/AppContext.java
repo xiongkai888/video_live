@@ -1,14 +1,16 @@
 package com.video.liveshow;
 
 import android.content.Context;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 
+import com.aliyun.common.httpfinal.QupaiHttpFinal;
+import com.aliyun.svideo.downloader.DownloaderManager;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.video.liveshow.http.HttpUtil;
 import com.video.liveshow.jpush.JMessageUtil;
 import com.video.liveshow.jpush.JPushUtil;
 import com.video.liveshow.utils.SharedPreferencesUtil;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import cn.sharesdk.framework.ShareSDK;
 import cn.tillusory.sdk.TiSDK;
@@ -43,6 +45,9 @@ public class AppContext extends MultiDexApplication {
         if (uidAndToken != null) {
             AppConfig.getInstance().login(uidAndToken[0], uidAndToken[1]);
         }
+
+        QupaiHttpFinal.getInstance().initOkHttpFinal();
+        DownloaderManager.getInstance().init(this);
     }
 
     @Override

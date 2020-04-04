@@ -1,7 +1,6 @@
 package com.video.liveshow.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -13,6 +12,8 @@ import com.video.liveshow.custom.RefreshAdapter;
 import com.video.liveshow.glide.ImgLoader;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by cxf on 2018/7/30.

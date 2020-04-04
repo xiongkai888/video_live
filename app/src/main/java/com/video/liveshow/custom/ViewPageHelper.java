@@ -1,8 +1,9 @@
 package com.video.liveshow.custom;
 
-import android.support.v4.view.ViewPager;
 
 import java.lang.reflect.Field;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * @author hpc

@@ -1,7 +1,6 @@
 package com.video.liveshow.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -9,6 +8,8 @@ import android.widget.TextView;
 import com.video.liveshow.R;
 import com.video.liveshow.bean.SystemMsgBean;
 import com.video.liveshow.custom.RefreshAdapter;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by cxf on 2018/7/27.

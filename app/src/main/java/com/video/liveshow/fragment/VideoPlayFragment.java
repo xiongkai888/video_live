@@ -1,6 +1,5 @@
 package com.video.liveshow.fragment;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
@@ -26,6 +25,8 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import androidx.viewpager.widget.ViewPager;
 
 
 /**

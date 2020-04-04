@@ -3,12 +3,13 @@ package com.video.liveshow.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 
 import com.video.liveshow.Constants;
 import com.video.liveshow.R;
 import com.video.liveshow.fragment.UserFragment;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * Created by cxf on 2018/6/30.

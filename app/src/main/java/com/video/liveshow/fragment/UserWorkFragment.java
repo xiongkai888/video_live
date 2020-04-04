@@ -1,6 +1,5 @@
 package com.video.liveshow.fragment;
 
-import android.support.v7.widget.GridLayoutManager;
 
 import com.alibaba.fastjson.JSON;
 import com.video.liveshow.Constants;
@@ -25,6 +24,8 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.recyclerview.widget.GridLayoutManager;
 
 /**
  * Created by cxf on 2018/6/10.

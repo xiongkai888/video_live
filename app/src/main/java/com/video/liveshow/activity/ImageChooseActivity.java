@@ -1,8 +1,6 @@
 package com.video.liveshow.activity;
 
 import android.content.Intent;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.video.liveshow.Constants;
@@ -17,6 +15,9 @@ import com.video.liveshow.utils.WordUtil;
 
 import java.io.File;
 import java.util.List;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by cxf on 2018/7/16.

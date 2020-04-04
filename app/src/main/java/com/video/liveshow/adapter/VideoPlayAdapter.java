@@ -1,7 +1,6 @@
 package com.video.liveshow.adapter;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,8 @@ import com.video.liveshow.custom.VideoPlayWrap;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 
 /**

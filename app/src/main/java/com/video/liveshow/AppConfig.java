@@ -148,7 +148,7 @@ public class AppConfig {
      */
     public boolean isLogin() {
         if (TextUtils.isEmpty(mToken) || TextUtils.isEmpty(mUid) || Constants.NOT_LOGIN_UID.equals(mUid)) {//未登录的uid为-1
-            return false;
+            return true;
         }
         return true;
     }

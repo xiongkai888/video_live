@@ -2,9 +2,6 @@ package com.video.liveshow.custom.video;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +18,9 @@ import com.video.liveshow.custom.TextSeekBar;
 import com.video.liveshow.interfaces.OnItemClickListener;
 import com.video.liveshow.utils.BitmapUtil;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import cn.tillusory.sdk.bean.TiDistortionEnum;
 
 /**

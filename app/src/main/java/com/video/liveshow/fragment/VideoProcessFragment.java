@@ -3,9 +3,6 @@ package com.video.liveshow.fragment;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +14,10 @@ import android.widget.TextView;
 import com.video.liveshow.Constants;
 import com.video.liveshow.R;
 import com.video.liveshow.custom.record.NumberProgressBar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 
 /**
  * Created by cxf on 2018/6/26.
