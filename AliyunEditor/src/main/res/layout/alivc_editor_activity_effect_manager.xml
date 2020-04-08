@@ -16,10 +16,10 @@
         >
 
     </android.support.design.widget.TabLayout>
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></androidx.core.view.ViewPager>
+        android:layout_height="match_parent"/>
     <FrameLayout
         android:id="@+id/pasterView"
         android:layout_width="match_parent"
