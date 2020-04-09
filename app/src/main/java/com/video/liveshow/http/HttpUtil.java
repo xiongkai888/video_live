@@ -272,6 +272,27 @@ public class HttpUtil {
                 .execute(callback);
     }
 
+
+    /**
+     * 手机号密码登录
+     *
+     * @param phoneNum
+     * @param pwd
+     * @param device
+     * @param callback
+     */
+    public static void login(String phoneNum, String pwd, String device, BaseHttpCallback<String> callback) {
+        OkGo.<BaseBean<String>>get(HTTP_URL + "service=Login.userLogin")
+                .headers("Connection", CONNECTION)
+                .params("user_login", phoneNum)
+                .params("password", pwd)
+                //                .params("code", code)
+                //                .params("signature", signature)
+                .params("device", device)
+                .tag(LOGIN)
+                .execute(callback);
+    }
+
     /**
      * 注册
      *
