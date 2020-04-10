@@ -10,12 +10,17 @@ import android.widget.TextView;
 import com.video.liveshow.AppConfig;
 import com.video.liveshow.Constants;
 import com.video.liveshow.R;
+import com.video.liveshow.http.BaseHttpCallback;
 import com.video.liveshow.http.HttpCallback;
 import com.video.liveshow.http.HttpUtil;
 import com.video.liveshow.utils.MD5Util;
 import com.video.liveshow.utils.ToastUtil;
 import com.video.liveshow.utils.ValidateUitl;
 import com.video.liveshow.utils.WordUtil;
+
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ZSFSetSecondPwdActivity extends AbsActivity {
 
@@ -93,9 +98,9 @@ public class ZSFSetSecondPwdActivity extends AbsActivity {
         mEditCode.requestFocus();
         String s = MD5Util.getMD5(mobile) + Constants.SIGN_1 + mobile + Constants.SIGN_2 + AppConfig.getInstance().getConfig().getDecryptSign() + Constants.SIGN_3;
         s = MD5Util.getMD5(s);
-        HttpUtil.getLoginCode(mobile, s, new HttpCallback() {
+        HttpUtil.getLoginCode(mobile, new BaseHttpCallback<List<String>>() {
             @Override
-            public void onSuccess(int code, String msg, String[] info) {
+            public void onSuccess(int code, @Nullable String msg, List<String> data) {
                 ToastUtil.show(msg);
                 mBtnGetCode.setEnabled(false);
                 if (mHandler != null) {

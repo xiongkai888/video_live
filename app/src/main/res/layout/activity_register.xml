@@ -157,6 +157,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginRight="20dp"
         android:focusable="true"
+        android:visibility="gone"
         android:focusableInTouchMode="true"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -183,7 +184,7 @@
         android:layout_height="50dp"
         android:layout_below="@id/group_3"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/bg_login_btn"
         android:gravity="center"

@@ -46,7 +46,7 @@ import okhttp3.OkHttpClient;
 
 public class HttpUtil {
 
-    private static final String HTTP_URL = AppConfig.HOST + "/api/public/?";
+    private static final String HTTP_URL = AppConfig.HOST;
     private static OkHttpClient sOkHttpClient;
     //    private static final String CONNECTION="keep-alive";
     private static final String CONNECTION = "close";
@@ -228,11 +228,10 @@ public class HttpUtil {
     /**
      * 获取登录验证码接口
      */
-    public static void getLoginCode(String mobile, String signature, HttpCallback callback) {
-        OkGo.<JsonBean>get(HTTP_URL + "service=Login.getLoginCode")
+    public static void getLoginCode(String mobile, BaseHttpCallback<List<String>> callback) {
+        OkGo.<BaseBean<List<String>>>get(HTTP_URL + "api/sms/send")
                 .headers("Connection", CONNECTION)
-                .params("mobile", mobile)
-                .params("signature", signature)
+                .params("user_mobile", mobile)
                 .tag(GET_LOGIN_CODE)
                 .execute(callback);
     }
@@ -300,14 +299,14 @@ public class HttpUtil {
      * @param code
      * @param callback
      */
-    public static void register(String phoneNum, String pwd, String pwd2, String code, String invite, HttpCallback callback) {
-        OkGo.<JsonBean>get(HTTP_URL + "service=Login.userRegister")
+    public static void register(String phoneNum, String pwd, String pwd2, String code, BaseHttpCallback<String> callback) {
+        OkGo.<BaseBean<String>>get(HTTP_URL + "api/register/zhuce")
                 .headers("Connection", CONNECTION)
-                .params("phone", phoneNum)
-                .params("pwd", pwd)
-                .params("pwd2", pwd2)
-                .params("code", code)
-                .params("teacher", invite)
+                .params("user_mobile", phoneNum)
+                .params("user_pass", pwd)
+                .params("repeat_pass", pwd2)
+                .params("mobile_code", code)
+//                .params("teacher", invite)
                 .tag(LOGIN)
                 .execute(callback);
     }

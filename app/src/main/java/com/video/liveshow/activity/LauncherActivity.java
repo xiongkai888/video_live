@@ -63,7 +63,7 @@ public class LauncherActivity extends AbsActivity implements View.OnClickListene
             @Override
             public void run() {
                 if (isload) {
-                    if (!AppConfig.getInstance().isLogin()) {
+                    if (AppConfig.getInstance().isLogin()) {
                         //检查Token是否过期
                         HttpUtil.ifToken(new CheckTokenCallback() {
                             @Override
@@ -150,7 +150,7 @@ public class LauncherActivity extends AbsActivity implements View.OnClickListene
     private void forwardMainActivity2() {
         if (isload) {
             isload = false;
-            if (!AppConfig.getInstance().isLogin()) {
+            if (AppConfig.getInstance().isLogin()) {
                 HttpUtil.ifToken(new CheckTokenCallback() {//检查Token是否过期
                     @Override
                     public void onSuccess(int code, String msg, String[] info) {

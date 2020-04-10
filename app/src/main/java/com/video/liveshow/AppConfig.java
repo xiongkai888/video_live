@@ -27,7 +27,7 @@ public class AppConfig {
     //    public static final String HOST = "http://39.96.179.221";
     //    public static final String HOST = "http://www.sspkjyxgs.com";
     //    public static final String HOST = "http://47.105.62.36";
-    public static final String HOST = "http://www.lfjbhshop.com";//新项目
+    public static final String HOST = "http://www.kaiyuanaudio.cn/";//新项目
 
     public static final String FILE_PROVIDER = "com.video.liveshow.fileprovider";
 
@@ -148,7 +148,7 @@ public class AppConfig {
      */
     public boolean isLogin() {
         if (TextUtils.isEmpty(mToken) || TextUtils.isEmpty(mUid) || Constants.NOT_LOGIN_UID.equals(mUid)) {//未登录的uid为-1
-            return true;
+            return false;
         }
         return true;
     }

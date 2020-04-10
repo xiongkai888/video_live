@@ -24,6 +24,7 @@ import com.video.liveshow.bean.UserBean;
 import com.video.liveshow.event.LoginUserChangedEvent;
 import com.video.liveshow.event.NeedRefreshEvent;
 import com.video.liveshow.event.ShowInviteEvent;
+import com.video.liveshow.http.BaseHttpCallback;
 import com.video.liveshow.http.HttpCallback;
 import com.video.liveshow.http.HttpUtil;
 import com.video.liveshow.interfaces.CommonCallback;
@@ -38,11 +39,13 @@ import com.video.liveshow.utils.ValidatePhoneUtil;
 import com.video.liveshow.utils.WordUtil;
 
 import org.greenrobot.eventbus.EventBus;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformDb;
 import cn.sharesdk.tencent.qq.QQ;
@@ -85,7 +88,7 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Sh
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
-        HttpUtil.getConfig(this,new CommonCallback<ConfigBean>() {
+        HttpUtil.getConfig(this, new CommonCallback<ConfigBean>() {
             @Override
             public void callback(ConfigBean configBean) {
 
@@ -208,15 +211,23 @@ public class LoginActivity extends AbsActivity implements OnItemClickListener<Sh
         mEditCode.requestFocus();
         String s = MD5Util.getMD5(mobile) + Constants.SIGN_1 + mobile + Constants.SIGN_2 + AppConfig.getInstance().getConfig().getDecryptSign() + Constants.SIGN_3;
         s = MD5Util.getMD5(s);
-        HttpUtil.getLoginCode(mobile, s, new HttpCallback() {
+        HttpUtil.getLoginCode(mobile, new BaseHttpCallback<List<String>>() {
             @Override
-            public void onSuccess(int code, String msg, String[] info) {
+            public void onSuccess(int code, @Nullable String msg, List<String> data) {
                 ToastUtil.show(msg);
                 mBtnGetCode.setEnabled(false);
                 if (mHandler != null) {
                     mHandler.sendEmptyMessage(0);
                 }
             }
+            //            @Override
+//            public void onSuccess(int code, String msg, String[] info) {
+//                ToastUtil.show(msg);
+//                mBtnGetCode.setEnabled(false);
+//                if (mHandler != null) {
+//                    mHandler.sendEmptyMessage(0);
+//                }
+//            }
         });
     }
 

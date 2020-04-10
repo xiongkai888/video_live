@@ -10,9 +10,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.lzy.okgo.model.Response;
 import com.video.liveshow.AppConfig;
 import com.video.liveshow.Constants;
 import com.video.liveshow.R;
+import com.video.liveshow.http.BaseBean;
+import com.video.liveshow.http.BaseHttpCallback;
 import com.video.liveshow.http.HttpCallback;
 import com.video.liveshow.http.HttpUtil;
 import com.video.liveshow.utils.DialogUitl;
@@ -21,6 +24,11 @@ import com.video.liveshow.utils.ToastUtil;
 import com.video.liveshow.utils.ValidatePhoneUtil;
 import com.video.liveshow.utils.ValidateUitl;
 import com.video.liveshow.utils.WordUtil;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
  * Created by cxf on 2018/9/25.
@@ -60,13 +68,13 @@ public class ZSFRegisterActivity extends AbsActivity {
     protected void main() {
         mGetCode = "获取验证码";
         mGetCodeAgain = "重新获取";
-        mBtnCode = (TextView) findViewById(R.id.btn_code);
-        mBtnRegister = findViewById(R.id.btn_register);
-        mEditPhone = (EditText) findViewById(R.id.edit_phone);
-        mEditCode = (EditText) findViewById(R.id.edit_code);
-        mEditPwd1 = (EditText) findViewById(R.id.edit_pwd_1);
-        mEditPwd2 = (EditText) findViewById(R.id.edit_pwd_2);
-        mEditInvite = (EditText) findViewById(R.id.edit_invite);
+        mBtnCode = findViewById(R.id.btn_code);
+        mBtnRegister =findViewById(R.id.btn_register);
+        mEditPhone = findViewById(R.id.edit_phone);
+        mEditCode = findViewById(R.id.edit_code);
+        mEditPwd1 = findViewById(R.id.edit_pwd_1);
+        mEditPwd2 = findViewById(R.id.edit_pwd_2);
+        mEditInvite = findViewById(R.id.edit_invite);
 
         mType = getIntent().getIntExtra("type", 0);
         switch (mType) {
@@ -98,11 +106,11 @@ public class ZSFRegisterActivity extends AbsActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!TextUtils.isEmpty(s) && s.length() == 11) {
-                    mBtnCode.setEnabled(true);
-                } else {
-                    mBtnCode.setEnabled(false);
-                }
+//                if (!TextUtils.isEmpty(s) && s.length() == 11) {
+//                    mBtnCode.setEnabled(true);
+//                } else {
+//                    mBtnCode.setEnabled(false);
+//                }
                 changeEnable();
             }
 
@@ -195,9 +203,18 @@ public class ZSFRegisterActivity extends AbsActivity {
             return;
         }
         mEditCode.requestFocus();
-        String s = MD5Util.getMD5(mobile) + Constants.SIGN_1 + mobile + Constants.SIGN_2 + AppConfig.getInstance().getConfig().getDecryptSign() + Constants.SIGN_3;
-        s = MD5Util.getMD5(s);
-        HttpUtil.getLoginCode(mobile, s, mGetCodeCallback);
+//        String s = MD5Util.getMD5(mobile) + Constants.SIGN_1 + mobile + Constants.SIGN_2 + AppConfig.getInstance().getConfig().getDecryptSign() + Constants.SIGN_3;
+//        s = MD5Util.getMD5(s);
+        HttpUtil.getLoginCode(mobile, new BaseHttpCallback<List<String>>(){
+            @Override
+            public void onSuccess(int code, @Nullable String msg, List<String> data) {
+                mBtnCode.setEnabled(false);
+                if (mHandler != null) {
+                    mHandler.sendEmptyMessage(0);
+                }
+                ToastUtil.show(msg);
+            }
+        });
     }
 
     private HttpCallback mGetCodeCallback = new HttpCallback() {
@@ -251,33 +268,29 @@ public class ZSFRegisterActivity extends AbsActivity {
             mEditPwd2.requestFocus();
             return;
         }
-        String invite = mEditInvite.getText().toString().trim();
-        if (TextUtils.isEmpty(invite)) {
-            mEditInvite.setError("请输入邀请码");
-            mEditInvite.requestFocus();
-            return;
-        }
+//        String invite = mEditInvite.getText().toString().trim();
+//        if (TextUtils.isEmpty(invite)) {
+//            mEditInvite.setError("请输入邀请码");
+//            mEditInvite.requestFocus();
+//            return;
+//        }
         if (mDialog != null) {
             mDialog.show();
         }
 
-        HttpUtil.register(phoneNum, MD5Util.getMD5(pwd), MD5Util.getMD5(pwd2), code, invite, new HttpCallback() {
+        HttpUtil.register(phoneNum, pwd, pwd2, code, new BaseHttpCallback<String>() {
             @Override
-            public void onSuccess(int code, String msg, String[] info) {
+            public void onSuccess(int code, String msg, String info) {
                 if (mDialog != null) {
                     mDialog.dismiss();
                 }
-                if (code == 0) {
-                    //注册完回去登录
-                    ToastUtil.show("注册成功，请登录");
-                    finish();
-                } else {
-                    ToastUtil.show(msg);
-                }
+                ToastUtil.show("注册成功，请登录");
+                finish();
             }
 
             @Override
-            public void onError() {
+            public void onFail(int code, @NotNull String msg) {
+                super.onFail(code, msg);
                 if (mDialog != null) {
                     mDialog.dismiss();
                 }
